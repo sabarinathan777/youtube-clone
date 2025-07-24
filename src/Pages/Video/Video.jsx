@@ -1,9 +1,12 @@
 import React from 'react'
-import './Video/Video.css'
+import "./Video.css";
+import PlayVideo from '../../components/play-video/PlayVideo';
 
 const Video = () => {
   return (
-    <div>Home</div>
+    <div className='play-container'>
+      <PlayVideo />
+    </div>
   )
 }
 

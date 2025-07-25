@@ -17,15 +17,15 @@ import meganIcon from '@/assets/megan.png';
 import cameronIcon from '@/assets/cameron.png';
 
 const sidebarItems = [
-  { icon: homeIcon, label: 'Home' },
-  { icon: gameIcon, label: 'Gaming' },
-  { icon: automobilesIcon, label: 'Automobiles' },
-  { icon: sportsIcon, label: 'Sports' },
-  { icon: entertainmentIcon, label: 'Entertainment' },
-  { icon: technologyIcon, label: 'Technology' },
-  { icon: musicIcon, label: 'Music' },
-  { icon: blogsIcon, label: 'Blogs' },
-  { icon: newsIcon, label: 'News' }
+  { icon: homeIcon, label: 'Home', id: 0 },
+  { icon: gameIcon, label: 'Gaming', id: 20 },
+  { icon: automobilesIcon, label: 'Automobiles', id: 2 },
+  { icon: sportsIcon, label: 'Sports', id: 17 },
+  { icon: entertainmentIcon, label: 'Entertainment', id: 24 },
+  { icon: technologyIcon, label: 'Technology', id: 28 },
+  { icon: musicIcon, label: 'Music', id: 10 },
+  { icon: blogsIcon, label: 'Blogs', id: 22 },
+  { icon: newsIcon, label: 'News', id: 25 }
 ];
 
 const subscribedUsers = [
@@ -36,31 +36,33 @@ const subscribedUsers = [
   { icon: cameronIcon, label: 'Cameron' }
 ];
 
-
-const Sidebar = ({sidebar}) => {
+const Sidebar = ({ sidebar, category, setCategory }) => {
   return (
-    <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
+    <div className={`sidebar ${sidebar ? '' : 'small-sidebar'}`}>
       <div className="shortcut-link">
         {sidebarItems.map((item, index) => (
-          <div className="side-link" key={index}>
+          <div
+            className={`side-link ${category === item.id ? 'active' : ''}`}
+            key={index}
+            onClick={() => setCategory(item.id)}
+          >
             <img src={item.icon} alt={item.label} />
-            <p>{item.label}</p>
+            {sidebar && <p>{item.label}</p>}
           </div>
         ))}
       </div>
       <hr />
       <div className="subscribed-list">
-        <h3>Subscribed</h3>
+        {sidebar && <h3>Subscribed</h3>}
         {subscribedUsers.map((user, index) => (
           <div className="side-link" key={index}>
             <img src={user.icon} alt={user.label} />
-            <p>{user.label}</p>
+            {sidebar && <p>{user.label}</p>}
           </div>
         ))}
       </div>
     </div>
   );
 };
-
 
 export default Sidebar;

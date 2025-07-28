@@ -44,3 +44,86 @@ nav {
     width: 35px;
     border-radius: 50%;
 }
+
+@media (max-width: 900px) {
+    .menu-icon {
+        display: none;
+    }
+    .nav-right img {
+        display: none;
+    }
+
+     .nav-right .profile-icon  {
+        display: block;
+        width: 30px;
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+    .nav-middle .search-box input {
+    border: 0;
+    outline: 0;
+    width: 120px;
+    background: transparent;
+}
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: none;
+    }
+
+    .nav-right img {
+        display: none;
+    }
+
+    .nav-right .profile-icon {
+        display: block;
+        width: 30px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .nav-middle .search-box input {
+        border: none;
+        outline: none;
+        width: 100px;
+        background: transparent;
+        font-size: 14px;
+    }
+
+    .nav-middle {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .nav-right, .nav-left {
+        flex: 0 0 auto;
+    }
+
+    .nav-bar {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+/* Extra small devices (e.g. Galaxy S5, S8) */
+@media (max-width: 480px) {
+    .logo {
+        width: 70px;
+    }
+
+    .nav-middle .search-box input {
+        width: 80px;
+        font-size: 12px;
+    }
+
+    .nav-right .profile-icon {
+        width: 26px;
+    }
+}

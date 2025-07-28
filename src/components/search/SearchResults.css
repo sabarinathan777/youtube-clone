@@ -1,0 +1,59 @@
+.search-results {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.video-card img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.video-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+.video-card p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.video-card:hover {
+  background-color: #f9f9f9;
+}
+
+
+.video-card h3,
+.video-card p {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .video-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .video-card img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
